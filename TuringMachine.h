@@ -98,12 +98,7 @@ namespace TinyTuring {
 		};
 		// if you don't want to write anything
 		void add_rule(const U& state_in, const T& symbol_in, const char& move_to, const U& state_out) {
-			add_state(state_in);
-			add_state(state_out);
-			add_symbol(symbol_in);
-			RuleKey rk(symbol_map[symbol_in], state_map[state_in]);
-			RuleInstruction ri(symbol_map[symbol_in], move_to, state_map[state_out]);
-			rule_table.insert({ rk, ri });
+			add_rule(state_in, symbol_in, move_to, state_out, symbol_in);
 		};
 
 		// The tape extends both ways. I wanted to keep it contiguous, so we're using a two-sided std::vector (i.e. two vectors)
@@ -183,10 +178,11 @@ namespace TinyTuring {
 			output_stream << "state=" << state_index[state] << " | position=" << position << std::endl;
 		}
 
-		TuringStatus status{ TuringStatus::Running }; // ok, I guess the user can forcefully halt the machine
 		const int& const get_steps_completed() {
 			return steps_completed;
 		};
+
+		TuringStatus status{ TuringStatus::Running }; // ok, I guess the user can forcefully halt the machine
 	private:
 		std::vector<int> tape_right;
 		std::vector<int> tape_left;
