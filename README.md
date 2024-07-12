@@ -1,6 +1,6 @@
 # LittleTuring
 
-A minimal header-only library for turing machines (contained in TuringMachine.h). Written as a little exercise for myself. It runs at 15ns per step on my mid-tier PC (BB(5) in <1s).
+A minimal header-only library for turing machines (`TuringMachine.h`). Written as a little exercise for myself. It runs at 15ns per step on my mid-tier PC (BB(5) in <1s).
 
 ## Example Usage
 
