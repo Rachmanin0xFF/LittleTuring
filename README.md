@@ -18,5 +18,5 @@ while(myMachine.status == TuringStatus::Running) {
     myMachine.print_tape(std::cout);
 }
 
-std::cout << "Machine stopped after " << myMachine.get_steps_completed() << " steps " << std::endl;
+std::cout << "Machine stopped after " << myMachine.get_steps_completed() << " steps." << std::endl;
 ```
